@@ -11,4 +11,5 @@ if [ "$WEB" = "200" ]; then
   echo "Website: OK"
 else
   echo "Website: ALERT"
+  exit 1
 fi
