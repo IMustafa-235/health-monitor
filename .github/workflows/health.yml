@@ -12,6 +12,7 @@ jobs:
       - uses: actions/checkout@v4
       - name: Run health script
         run: |
+          set -o pipefail
           chmod +x health.sh
           ./health.sh | tee report.log
       - name: Save report
