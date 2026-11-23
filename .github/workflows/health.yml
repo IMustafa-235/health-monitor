@@ -1,0 +1,21 @@
+name: Health Check
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run health script
+        run: |
+          chmod +x health.sh
+          ./health.sh | tee report.log
+      - name: Save report
+        uses: actions/upload-artifact@v4
+        with:
+          name: health-report
+          path: report.log
