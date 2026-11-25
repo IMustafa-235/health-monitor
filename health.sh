@@ -13,4 +13,3 @@ else
   echo "Website: ALERT"
   exit 1
 fi
-echo "check complete"
