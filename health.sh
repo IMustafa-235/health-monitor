@@ -14,4 +14,3 @@ else
   exit 1
 fi
 echo "check complete"
-# PR test
